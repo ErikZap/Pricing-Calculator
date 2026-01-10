@@ -21,7 +21,8 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    /* Use height instead of min-height to lock viewport */
+    height: 100vh; 
     
     /* --- GLOBAL BACKGROUND IMAGE --- */
     background-image: url('bg_global.jpg'); 
@@ -29,6 +30,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    overflow: hidden; /* Prevents scroll on body */
 }
 
 .app-container {
@@ -38,20 +40,25 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
     position: relative; 
     z-index: 1;
+    overflow-y: auto; /* Allows internal scroll if needed, but hides main scrollbar */
 
-    /* --- THE "LIFT" TRICK --- */
-    /* Centers content vertically... */
+    /* --- PRODUCT PAGE LAYOUT (The "Lift" Trick) --- */
     justify-content: center; 
-    /* ...BUT adds a huge cushion at the bottom to force the center point UP. */
-    /* Increase this pixel value to lift the card higher. Decrease to lower it. */
-    padding-bottom: 140px; 
+    padding-bottom: 140px; /* Your custom lift value */
+}
+
+/* --- MENU PAGE OVERRIDE --- */
+/* This resets the layout JUST for the index page */
+body.menu-page .app-container {
+    padding-bottom: 20px; /* Reset padding to normal */
+    justify-content: space-between; /* Spreads menu and footer apart */
 }
 
 /* --- TYPOGRAPHY --- */
-h1, h2, .title, .promo-text, .price-value, .total-price-value, .qty-val, input, select, .back-link {
+h1, h2, .title, .promo-text, .price-value, .total-price-value, .qty-val, input, select, .back-link, .footer {
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
 }
@@ -77,14 +84,13 @@ h2 {
     display: inline-block;
     
     /* --- ATTACHING TO CARD --- */
-    /* No auto margins. Just a small gap below it. */
     margin-top: 0; 
+    /* Your custom gap */
     margin-bottom: 15px; 
     
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
-    /* Ensure it aligns left with the card */
     align-self: flex-start;
 }
 
@@ -93,11 +99,9 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    /* This overrides the container's center logic just for the menu */
     flex-grow: 1;
     align-content: center;
-    /* Reset the bottom padding for the menu so it stays truly centered */
-    margin-bottom: -150px; 
+    /* Removed negative margin here, handled by container now */
 }
 
 .menu-item {
@@ -345,14 +349,12 @@ option {
     text-align: center;
     color: #555;
     font-size: 0.75rem;
-    margin-top: auto;
-    padding-bottom: 20px;
+    /* Pushes footer to bottom on menu page */
+    margin-top: auto; 
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+    /* Applied Cinzel font to footer */
+    font-family: 'Cinzel', serif;
 }
-
-
-
-

@@ -47,7 +47,7 @@ body {
     justify-content: center; 
     /* ...BUT adds a huge cushion at the bottom to force the center point UP. */
     /* Increase this pixel value to lift the card higher. Decrease to lower it. */
-    padding-bottom: 150px; 
+    padding-bottom: 50px; 
 }
 
 /* --- TYPOGRAPHY --- */
@@ -352,4 +352,5 @@ option {
     position: relative;
     z-index: 1;
 }
+
 

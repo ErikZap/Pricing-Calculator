@@ -53,7 +53,7 @@ body {
 /* --- MENU PAGE OVERRIDE --- */
 /* This resets the layout JUST for the index page */
 body.menu-page .app-container {
-    padding-bottom: 20px; /* Reset padding to normal */
+    padding-bottom: 50px; /* Reset padding to normal */
     justify-content: space-between; /* Spreads menu and footer apart */
 }
 
@@ -358,3 +358,4 @@ option {
     /* Applied Cinzel font to footer */
     font-family: 'Cinzel', serif;
 }
+

@@ -42,6 +42,9 @@ body {
     position: relative; 
     z-index: 1;
     min-height: 100vh;
+    
+    /* NEW: This lifts the content up by adding invisible space at the bottom */
+    padding-bottom: 80px; 
 }
 
 /* --- TYPOGRAPHY --- */
@@ -69,8 +72,11 @@ h2 {
     text-decoration: none;
     font-weight: 700;
     display: inline-block;
-    /* Removed bottom margin so it sticks to top better */
-    margin-bottom: 0; 
+    
+    /* NEW: Pushes away from top, but stays 10px above the card */
+    margin-top: auto; 
+    margin-bottom: 10px; 
+    
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
@@ -81,7 +87,8 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    /* Centers the menu vertically */
+    
+    /* Centers the menu vertically in the remaining space */
     flex-grow: 1;
     align-content: center;
 }
@@ -141,8 +148,8 @@ h2 {
     background-size: cover;
     background-position: center;
     
-    /* NEW: This centers the card vertically (the "Trick") */
-    margin-top: auto;
+    /* NEW: Magnetizes to the Back Link (0 top margin), pushes away from footer */
+    margin-top: 0;
     margin-bottom: auto;
 }
 
@@ -331,7 +338,8 @@ option {
     text-align: center;
     color: #555;
     font-size: 0.75rem;
-    margin-top: auto;
+    /* Pushes away from content, stays near bottom */
+    margin-top: auto; 
     padding-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;

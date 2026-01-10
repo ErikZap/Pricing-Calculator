@@ -19,10 +19,11 @@ body {
     color: var(--text-main);
     margin: 0;
     padding: 0;
+    /* Use min-height, not fixed height, so it grows if content is tall */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    /* Use height instead of min-height to lock viewport */
-    height: 100vh; 
+    align-items: center; /* Vertically centers content if it fits */
     
     /* --- GLOBAL BACKGROUND IMAGE --- */
     background-image: url('bg_global.jpg'); 
@@ -30,7 +31,6 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    overflow: hidden; /* Prevents scroll on body */
 }
 
 .app-container {
@@ -40,21 +40,10 @@ body {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* Allow container to grow naturally */
+    height: auto; 
     position: relative; 
     z-index: 1;
-    overflow-y: auto; /* Allows internal scroll if needed, but hides main scrollbar */
-
-    /* --- PRODUCT PAGE LAYOUT (The "Lift" Trick) --- */
-    justify-content: center; 
-    padding-bottom: 90px; /* Your custom lift value */
-}
-
-/* --- MENU PAGE OVERRIDE --- */
-/* This resets the layout JUST for the index page */
-body.menu-page .app-container {
-    padding-bottom: 50px; /* Reset padding to normal */
-    justify-content: space-between; /* Spreads menu and footer apart */
 }
 
 /* --- TYPOGRAPHY --- */
@@ -82,16 +71,11 @@ h2 {
     text-decoration: none;
     font-weight: 700;
     display: inline-block;
-    
-    /* --- ATTACHING TO CARD --- */
-    margin-top: 0; 
-    /* Your custom gap */
-    margin-bottom: 15px; 
-    
+    margin-bottom: 15px;
     font-size: 0.9rem;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
-    align-self: flex-start;
+    align-self: flex-start; /* Aligns link to the left */
 }
 
 /* --- MAIN MENU GRID --- */
@@ -99,9 +83,7 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    flex-grow: 1;
-    align-content: center;
-    /* Removed negative margin here, handled by container now */
+    margin-bottom: 20px;
 }
 
 .menu-item {
@@ -158,10 +140,7 @@ h2 {
     background-color: #1e1e1e;
     background-size: cover;
     background-position: center;
-    
-    /* --- ATTACHED TO BACK LINK --- */
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 
 /* Backgrounds per product */
@@ -349,15 +328,10 @@ option {
     text-align: center;
     color: #555;
     font-size: 0.75rem;
-    /* Pushes footer to bottom on menu page */
-    margin-top: auto; 
+    margin-top: auto;
+    padding-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
-    /* Applied Cinzel font to footer */
-    font-family: 'Cinzel', serif;
 }
-
-
-

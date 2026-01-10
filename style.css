@@ -47,7 +47,7 @@ body {
 
     /* --- PRODUCT PAGE LAYOUT (The "Lift" Trick) --- */
     justify-content: center; 
-    padding-bottom: 140px; /* Your custom lift value */
+    padding-bottom: 115px; /* Your custom lift value */
 }
 
 /* --- MENU PAGE OVERRIDE --- */
@@ -358,4 +358,5 @@ option {
     /* Applied Cinzel font to footer */
     font-family: 'Cinzel', serif;
 }
+
 

@@ -1,0 +1,12 @@
+Background and rectangle Images:
+
+I have set up placeholders in the CSS. Look for the section labeled /* --- BACKGROUND IMAGES --- */.
+
+Replace 'bg_global.jpg' with your main texture.
+
+Replace 'bg_scrims.jpg', 'bg_amp.jpg', etc., with the specific images you want appearing inside the calculator rectangle for that product.
+
+
+Menu Product "clickable images":
+
+Your images: backdrops.jpg, scrims.jpg, amp-flags.jpg, cab-mesh.jpg, battle-flags.jpg, war-flags.jpg (These are the filenames I used in the code below. Rename your images to match or update the code.)

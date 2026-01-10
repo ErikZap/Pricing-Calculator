@@ -1,0 +1,335 @@
+/* Import 'Cinzel' for headers (Metal look) and 'Roboto' for readability */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --bg-color: #050505;
+    --card-bg-overlay: rgba(15, 15, 15, 0.80);
+    --accent: #00e5ff; /* Cyan Neon */
+    --accent-glow: rgba(0, 229, 255, 0.4);
+    --text-main: #ffffff;
+    --text-sec: #b0b0b0;
+    --success: #00e676;
+    --input-bg: #1a1a1a;
+    --input-border: #333;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    
+    /* --- GLOBAL BACKGROUND IMAGE --- */
+    background-image: url('bg_global.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative; 
+    z-index: 1;
+    min-height: 100vh;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, .title, .promo-text, .price-value, .total-price-value, .qty-val, input, select, .back-link {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--text-main);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 4px -4px var(--accent);
+    line-height: 1.1;
+}
+
+.back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+
+/* --- MAIN MENU GRID --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    flex-grow: 1;
+    align-content: center;
+}
+
+.menu-item {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.menu-item:hover, .menu-item:active {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--accent-glow);
+    border-color: var(--accent);
+}
+
+.menu-item img {
+    width: 100%;
+    /* height: 150px;  <-- REMOVED FIXED HEIGHT */
+    aspect-ratio: 1 / 1; /* <-- ADDED: Forces a perfect square ratio */
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.8);
+    transition: filter 0.2s;
+}
+
+.menu-item:hover img {
+    filter: brightness(1.1);
+}
+
+.menu-item .title {
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    text-shadow: 0 2px 4px #000;
+}
+
+/* --- PRODUCT CARD --- */
+.card {
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Backgrounds per product */
+body[data-name="backdrops"] .card { background-image: url('bg_backdrops.jpg'); }
+body[data-name="scrims"] .card { background-image: url('bg_scrims.jpg'); }
+body[data-name="ampFlags"] .card { background-image: url('bg_amp.jpg'); }
+body[data-name="cabMesh"] .card { background-image: url('bg_mesh.jpg'); }
+body[data-name="battleFlags"] .card { background-image: url('bg_battle.jpg'); }
+body[data-name="warFlags"] .card { background-image: url('bg_war.jpg'); }
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--card-bg-overlay);
+    z-index: 1;
+}
+
+.card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* --- FORM ELEMENTS --- */
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 229, 255, 0.2);
+    font-family: 'Cinzel', serif;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: #fff;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%2300e5ff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    background: #000;
+}
+
+option {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+/* --- QUANTITY SELECTOR --- */
+.qty-selector {
+    display: flex;
+    align-items: center;
+    background: var(--input-bg);
+    border-radius: 6px;
+    padding: 6px;
+    border: 1px solid var(--input-border);
+}
+
+.qty-btn {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.05);
+    border: none;
+    color: var(--accent);
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.qty-btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+    color: #fff;
+}
+
+.qty-val {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* --- PROMO TEXT --- */
+.promo-text {
+    text-align: center;
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-shadow: 0 0 8px var(--accent-glow);
+    border: 1px dashed rgba(0, 229, 255, 0.3);
+    padding: 10px;
+    border-radius: 4px;
+    background: rgba(0, 229, 255, 0.05);
+}
+
+/* --- PRICING DISPLAY --- */
+.price-display {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-label {
+    color: var(--text-sec);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+}
+
+.price-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 5px 0;
+    line-height: 1;
+    text-shadow: 0 2px 4px #000;
+}
+
+.total-price-value {
+    font-size: 4rem;
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.discount-tag {
+    background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.2), transparent);
+    color: var(--success);
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(0, 230, 118, 0.4);
+    font-family: 'Cinzel', serif;
+}
+
+.discount-tag.visible { opacity: 1; }
+
+.footer {
+    text-align: center;
+    color: #555;
+    font-size: 0.75rem;
+    margin-top: auto;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}

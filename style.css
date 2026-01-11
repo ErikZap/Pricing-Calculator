@@ -72,7 +72,7 @@ h2 {
     font-weight: 700;
     display: inline-block;
     margin-bottom: 15px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
     align-self: flex-start; /* Aligns link to the left */
@@ -120,7 +120,7 @@ h2 {
     padding: 12px;
     text-align: center;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
     position: absolute;
     bottom: 0;
@@ -335,3 +335,4 @@ option {
     position: relative;
     z-index: 1;
 }
+

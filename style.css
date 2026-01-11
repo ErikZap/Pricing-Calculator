@@ -72,7 +72,7 @@ h2 {
     font-weight: 700;
     display: inline-block;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(0,0,0,0.8);
     align-self: flex-start; /* Aligns link to the left */
@@ -172,7 +172,7 @@ body[data-name="warFlags"] .card { background-image: url('bg_war.jpg'); }
 label {
     display: block;
     color: var(--accent);
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -262,7 +262,7 @@ option {
 .promo-text {
     text-align: center;
     color: var(--accent);
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     margin-top: 20px;
     margin-bottom: 5px;
     font-weight: 700;
@@ -283,7 +283,7 @@ option {
 
 .price-label {
     color: var(--text-sec);
-    font-size: 0.9rem;
+    font-size: 1.0rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 15px;
@@ -327,7 +327,7 @@ option {
 .footer {
     text-align: center;
     color: #555;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin-top: auto;
     padding-bottom: 20px;
     text-transform: uppercase;
@@ -335,6 +335,7 @@ option {
     position: relative;
     z-index: 1;
 }
+
 
 
 

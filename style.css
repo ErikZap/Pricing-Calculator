@@ -3,7 +3,7 @@
 
 :root {
     --bg-color: #000000;
-    --card-bg-overlay: rgba(15, 15, 15, 0.75);
+    --card-bg-overlay: rgba(15, 15, 15, 0.80);
     --accent: #00e5ff; /* Cyan Neon */
     --accent-glow: rgba(0, 229, 255, 0.4);
     --text-main: #ffffff;
@@ -335,6 +335,7 @@ option {
     position: relative;
     z-index: 1;
 }
+
 
 
 

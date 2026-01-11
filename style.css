@@ -172,7 +172,7 @@ body[data-name="warFlags"] .card { background-image: url('bg_war.jpg'); }
 label {
     display: block;
     color: var(--accent);
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -193,7 +193,7 @@ input[type="number"], select {
     color: #fff;
     padding: 14px;
     border-radius: 6px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     outline: none;
     transition: all 0.3s;
     box-sizing: border-box;
@@ -262,7 +262,7 @@ option {
 .promo-text {
     text-align: center;
     color: var(--accent);
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     margin-top: 20px;
     margin-bottom: 5px;
     font-weight: 700;
@@ -283,7 +283,7 @@ option {
 
 .price-label {
     color: var(--text-sec);
-    font-size: 1.0rem;
+    font-size: 1.1rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 15px;
@@ -301,7 +301,7 @@ option {
 }
 
 .total-price-value {
-    font-size: 4rem;
+    font-size: 3.8rem;
     color: var(--accent);
     text-shadow: 0 0 20px var(--accent-glow);
 }
@@ -310,7 +310,7 @@ option {
     background: linear-gradient(90deg, transparent, rgba(0, 230, 118, 0.2), transparent);
     color: var(--success);
     padding: 5px 10px;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     display: inline-block;
     margin-top: 10px;
     opacity: 0;
@@ -335,6 +335,7 @@ option {
     position: relative;
     z-index: 1;
 }
+
 
 
 

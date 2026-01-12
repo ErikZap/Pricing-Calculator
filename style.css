@@ -262,7 +262,7 @@ option {
 .promo-text {
     text-align: center;
     color: var(--accent);
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     margin-top: 20px;
     margin-bottom: 5px;
     font-weight: 700;
@@ -334,4 +334,5 @@ option {
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+
 }

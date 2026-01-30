@@ -64,7 +64,7 @@ label {
     display: block;
     color: var(--text-white);
     font-size: 1.4rem;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 700;
@@ -81,7 +81,7 @@ input[type="number"], select {
     background: transparent; /* No fill */
     border: 2px solid var(--border-white); /* Thicker, sharp border */
     color: var(--text-white);
-    padding: 12px;
+    padding: 10px;
     border-radius: 0; /* Razor sharp corners */
     font-size: 1.5rem;
     outline: none;
@@ -152,10 +152,9 @@ option {
 /* --- PRICING DISPLAY --- */
 .price-display {
     text-align: center;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed rgba(255,255,255,0.3);
-}
+    margin-top: 16px;
+    padding-top: 16px;
+ }
 
 .price-label {
     font-size: 1.3rem;

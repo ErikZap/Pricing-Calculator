@@ -63,7 +63,7 @@ h2 {
 label {
     display: block;
     color: var(--text-white);
-    font-size: 0.9rem;
+    font-size: 1.4rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -83,7 +83,7 @@ input[type="number"], select {
     color: var(--text-white);
     padding: 12px;
     border-radius: 0; /* Razor sharp corners */
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     outline: none;
     transition: all 0.2s;
     box-sizing: border-box;
@@ -158,14 +158,14 @@ option {
 }
 
 .price-label {
-    font-size: 1rem;
+    font-size: 1.3rem;
     letter-spacing: 3px;
     margin-top: 10px;
     opacity: 0.9;
 }
 
 .price-value {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-family: 'Cinzel', serif;
     font-weight: 700;
     color: var(--text-white);
@@ -182,7 +182,7 @@ option {
     border: 1px solid #fff;
     color: #fff;
     padding: 5px 10px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     display: inline-block;
     margin-top: 10px;
     opacity: 0;

@@ -152,8 +152,8 @@ option {
 /* --- PRICING DISPLAY --- */
 .price-display {
     text-align: center;
-    margin-top: 16px;
-    padding-top: 16px;
+    margin-top: 12px;
+    padding-top: 12px;
  }
 
 .price-label {

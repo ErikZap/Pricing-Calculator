@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Stage Scrims V2</title>
+    <link rel="stylesheet" href="style_v2.css">
+</head>
+<body data-product="dimension" data-name="scrims">
+
+<div class="app-container">
+    <div class="card">
+        <h2>Stage Scrims</h2>
+        
+        <div class="input-row">
+            <div class="form-group" style="flex:1">
+                <label>Width (ft)</label>
+                <input type="number" id="widthInput" value="6" min="1" step="0.5">
+            </div>
+            <div class="form-group" style="flex:1">
+                <label>Height (ft)</label>
+                <input type="number" id="heightInput" value="6" min="1" step="0.5">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Material</label>
+            <select id="materialInput">
+                <option value="lightpass">Light-Pass FX Fabric</option>
+                <option value="mesh">100% Sound-Pass Fabric Mesh</option>
+                <option value="solid">Pro Heavy Solid Backdrop Fabric</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Quantity</label>
+            <div class="qty-selector">
+                <button class="qty-btn" onclick="adjustQty(-1)">−</button>
+                <div class="qty-val" id="qtyDisplay">1</div>
+                <button class="qty-btn" onclick="adjustQty(1)">+</button>
+            </div>
+        </div>
+
+        <div class="price-display">
+            <div class="price-label">COST PER EACH</div>
+            <div class="price-value" id="priceEach">$0</div>
+            <div class="discount-tag" id="discountTag">DISCOUNT APPLIED</div>
+            
+            <div class="price-label">TOTAL</div>
+            <div class="price-value total-price-value" id="totalPrice">$0</div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script>init('dimension');</script>
+</body>
+</html>

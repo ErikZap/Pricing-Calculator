@@ -1,0 +1,195 @@
+/* style_v2.css - THE "GHOST" THEME */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --text-white: #ffffff;
+    --border-white: #ffffff;
+    --focus-glow: rgba(255, 255, 255, 0.6);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent; /* 100% See-through */
+    color: var(--text-white);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 10px; /* Reduced padding for tighter fit */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- TYPOGRAPHY (Piercing White) --- */
+h1, h2, .price-label, .qty-val, input, select {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    color: var(--text-white);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8); /* Crisp shadow for contrast */
+}
+
+h2 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: center;
+    border-bottom: 2px solid var(--border-white);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* --- CARD (Invisible Container) --- */
+.card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 10px;
+}
+
+/* --- INPUTS & CONTROLS (Razor Sharp) --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    color: var(--text-white);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+
+input[type="number"], select {
+    width: 100%;
+    background: transparent; /* No fill */
+    border: 2px solid var(--border-white); /* Thicker, sharp border */
+    color: var(--text-white);
+    padding: 12px;
+    border-radius: 0; /* Razor sharp corners */
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.2s;
+    box-sizing: border-box;
+    appearance: none;
+}
+
+/* Custom White Dropdown Arrow */
+select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 10px var(--focus-glow);
+    background: rgba(255, 255, 255, 0.1); /* Very subtle highlight on interaction */
+}
+
+/* Dropdown Options (Must have bg color to be readable) */
+option {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* --- QUANTITY SELECTOR --- */
+.qty-selector {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--border-white); /* Single unified border */
+}
+
+.qty-btn {
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.qty-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.qty-val {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-white);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-right: 1px solid rgba(255,255,255,0.3);
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- PRICING DISPLAY --- */
+.price-display {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255,255,255,0.3);
+}
+
+.price-label {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.price-value {
+    font-size: 2.2rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--text-white);
+    margin: 5px 0;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.total-price-value {
+    font-size: 3.5rem;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.discount-tag {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 10px;
+    opacity: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-family: 'Cinzel', serif;
+}
+
+.discount-tag.visible { opacity: 1; }

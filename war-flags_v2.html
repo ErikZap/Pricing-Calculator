@@ -1,49 +1,49 @@
-!DOCTYPE html
-html lang=en
-head
-    meta charset=UTF-8
-    meta name=viewport content=width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no
-    titleWar Flag Backdrops V2title
-    link rel=stylesheet href=style_v2.css
-head
-body data-product=dimension data-name=warFlags
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>War Flag Backdrops V2</title>
+    <link rel="stylesheet" href="style_v2.css">
+</head>
+<body data-product="dimension" data-name="warFlags">
 
-div class=app-container
-    div class=card
-        h2War Flag Backdropsh2
+<div class="app-container">
+    <div class="card">
+        <h2>Just punch in a size</h2>
         
-        div class=input-row
-            div class=form-group style=flex1
-                labelWidth (ft)label
-                input type=number id=widthInput value=4 min=4 max=10 step=0.5
-            div
-            div class=form-group style=flex1
-                labelHeight (ft)label
-                input type=number id=heightInput value=12 min=8 max=50 step=0.5
-            div
-        div
+        <div class="input-row">
+            <div class="form-group" style="flex:1">
+                <label>Width (ft)</label>
+                <input type="number" id="widthInput" value="4" min="4" max="10" step="0.5">
+            </div>
+            <div class="form-group" style="flex:1">
+                <label>Height (ft)</label>
+                <input type="number" id="heightInput" value="12" min="8" max="50" step="0.5">
+            </div>
+        </div>
 
-        div class=form-group
-            labelQuantitylabel
-            div class=qty-selector
-                button class=qty-btn onclick=adjustQty(-1)−button
-                div class=qty-val id=qtyDisplay1div
-                button class=qty-btn onclick=adjustQty(1)+button
-            div
-        div
+        <div class="form-group">
+            <label>Quantity</label>
+            <div class="qty-selector">
+                <button class="qty-btn" onclick="adjustQty(-1)">−</button>
+                <div class="qty-val" id="qtyDisplay">1</div>
+                <button class="qty-btn" onclick="adjustQty(1)">+</button>
+            </div>
+        </div>
 
-        div class=price-display
-            div class=price-labelCOST PER EACHdiv
-            div class=price-value id=priceEach$0div
-            div class=discount-tag id=discountTagDISCOUNT APPLIEDdiv
+        <div class="price-display">
+            <div class="price-label">COST PER EACH</div>
+            <div class="price-value" id="priceEach">$0</div>
+            <div class="discount-tag" id="discountTag">DISCOUNT APPLIED</div>
             
-            div class=price-labelTOTALdiv
-            div class=price-value total-price-value id=totalPrice$0div
-        div
-    div
-div
+            <div class="price-label">TOTAL</div>
+            <div class="price-value total-price-value" id="totalPrice">$0</div>
+        </div>
+    </div>
+</div>
 
-script src=script.jsscript
-scriptinit('dimension');script
-body
-html
+<script src="script.js"></script>
+<script>init('dimension');</script>
+</body>
+</html>

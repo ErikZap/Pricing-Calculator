@@ -148,15 +148,15 @@ function calculate(productType) {
         }
     }
 
-    // RULE: Amp Flags / Cab Mesh - Buy 3 Get +1 Free Logic
+    // RULE: Amp Flags / Cab Mesh - Buy 2 Get +1 Free Logic
     if (productType === 'preset') {
         // Price per unit stays constant (No discount on price)
         finalUnitPrice = unitPrice; 
         totalPrice = unitPrice * qty; // Simple multiplication
 
-        // Calculate how many free ones they get (Floor of Qty / 3)
-        // e.g. Qty 3 = 1 Free. Qty 5 = 1 Free. Qty 6 = 2 Free.
-        const freeItems = Math.floor(qty / 3);
+        // Calculate how many free ones they get (Floor of Qty / 2)
+        // e.g. Qty 2 = 1 Free. Qty 4 = 2 Free. Qty 6 = 3 Free.
+        const freeItems = Math.floor(qty / 2);
 
         if (freeItems > 0) {
             const pageName = document.body.dataset.name;
